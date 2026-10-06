@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira CCTV & IT Solution</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f5f9ff;
+            color: #1e2b3a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- HEADER / NAV ---------- */
+        header {
+            background: linear-gradient(135deg, #0b1e2f 0%, #12314a 100%) !important;
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            background: rgba(11, 30, 47, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            padding: 8px 18px;
+            backdrop-filter: blur(4px);
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 4px;
+        }
+
+        .logo i {
+            color: #3bb4e0;
+            font-size: 2rem;
+            filter: drop-shadow(0 0 6px rgba(59, 180, 224, 0.5));
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .logo .highlight {
+            color: #3bb4e0;
+            font-weight: 300;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #e0edf5;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 2px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        nav a i {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            color: white;
+            border-bottom-color: #3bb4e0;
+        }
+
+        /* ---------- BUTTONS ---------- */
+        .btn {
+            display: inline-block;
+            background: #3bb4e0;
+            color: #0b1e2f;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 6px 16px rgba(59, 180, 224, 0.3);
+        }
+
+        .btn:hover {
+            background: #5fc9f0;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px rgba(59, 180, 224, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3bb4e0;
+            color: #3bb4e0;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: #3bb4e0;
+            color: #0b1e2f;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0b1e2f;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 70%;
+            height: 4px;
+            background: #3bb4e0;
+            border-radius: 4px;
+        }
+
+        .section-sub {
+            color: #2c4056;
+            font-size: 1.2rem;
+            margin-bottom: 48px;
+            max-width: 700px;
+        }
+
+        /* ---------- HOME (HERO) ---------- */
+        #home {
+            background:
+                linear-gradient(rgba(6, 22, 35, 0.62), rgba(6, 22, 35, 0.72)),
+                url('home_backgrount.jpg') center center / cover no-repeat;
+            padding: 90px 0 90px;
+            min-height: 78vh;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1 1 380px;
+            color: #ffffff;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-content h1 i {
+            color: #7ad7ff;
+            margin-right: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .hero-badge {
+            display: flex;
+            gap: 25px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            padding: 12px 22px;
+            border-radius: 60px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            font-weight: 600;
+        }
+
+        .badge-item i {
+            color: #7ad7ff;
+            font-size: 1.4rem;
+        }
+
+        .hero-image {
+            flex: 0 0 220px;
+            text-align: center;
+            margin-left: auto;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.35);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hero-image-label {
+            margin-top: 12px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ---------- ABOUT ---------- */
+        #about {
+            background: white;
+        }
+
+        .about-grid {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1 1 380px;
+        }
+
+        .about-text p {
+            margin-bottom: 22px;
+            font-size: 1.1rem;
+            color: #1e2b3a;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 35px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2.2rem;
+            color: #0b1e2f;
+            font-weight: 800;
+        }
+
+        .stat-item h3 i {
+            color: #3bb4e0;
+            font-size: 1.8rem;
+            margin-right: 6px;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: #3f5568;
+        }
+
+        .about-image {
+            flex: 1 1 360px;
+            background: #e3f0fc;
+            border-radius: 40px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .about-image i {
+            font-size: 6rem;
+            color: #12314a;
+            opacity: 0.9;
+        }
+
+        .about-image .fa-shield-halved {
+            color: #3bb4e0;
+        }
+
+        /* ---------- CONTACT ---------- */
+        #contact {
+            position: relative;
+            isolation: isolate;
+            background: #0b1e2f;
+        }
+
+        #contact::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: rgba(5, 18, 28, 0.68);
+        }
+
+        .contact-background-video {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        #contact .container {
+            position: relative;
+            z-index: 0;
+        }
+
+        #contact .section-title,
+        #contact .section-sub,
+        .contact-info h3 {
+            color: #ffffff;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1 1 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+            color: #0b1e2f;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 25px;
+            background: white;
+            padding: 15px 22px;
+            border-radius: 60px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+        }
+
+        .contact-detail i {
+            font-size: 1.6rem;
+            color: #3bb4e0;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-detail span {
+            font-weight: 600;
+            color: #1e2b3a;
+        }
+
+        .contact-form {
+            flex: 1 1 400px;
+            background: white;
+            padding: 40px 35px;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-form h3 {
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+            color: #0b1e2f;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #dbe7f2;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: 0.2s;
+            background: #f9fcff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #3bb4e0;
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(59, 180, 224, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 16px;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #0b1e2f;
+            color: #b6cfdf;
+            text-align: center;
+            padding: 35px 0;
+            font-size: 0.95rem;
+        }
+
+        footer i {
+            color: #3bb4e0;
+            margin: 0 5px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            .badge-item {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="logo.png" alt="Mira CCTV & IT logo">
+                <span>Mira <span class="highlight">CCTV & IT</span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-circle-info"></i> About</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== HOME SECTION ========== -->
+        <section id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>
+                        Secure & Update Your World with Mira
+                    </h1>
+                    <p>
+                        Professional CCTV installation, IT infrastructure, and smart security solutions 
+                        for homes, offices, and enterprises. We keep you protected, connected, and ahead.
+                    </p>
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-phone-alt"></i> Get a free call
+                    </a>
+                    <div class="hero-badge">
+                        <div class="badge-item">
+                            <i class="fas fa-clock"></i> 24/7 Support
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-certificate"></i> Certified Experts
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="director_image.jpeg" alt="Director of Mira CCTV & IT Solution">
+                    <div class="hero-image-label">Director</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT SECTION ========== -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Mira</h2>
+                <p class="section-sub">Your trusted partner in security & IT since 2015.</p>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            <i class="fas fa-check-circle" style="color:#3bb4e0; margin-right:10px;"></i>
+                            <strong>Mira CCTV & IT Solution</strong> delivers cutting-edge surveillance and 
+                            network infrastructure. We combine deep technical expertise with a personal touch 
+                            to protect what matters most.
+                        </p>
+                        <p>
+                            From HD CCTV cameras, biometric access, and alarm systems to structured cabling, 
+                            cloud backup, and IT support – we design solutions that fit your budget and scale 
+                            with your needs. Our certified technicians ensure every installation is clean, 
+                            compliant, and future-ready.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <h3><i class="fas fa-camera"></i> 500+</h3>
+                                <p>Cameras installed</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3><i class="fas fa-building"></i> 120+</h3>
+                                <p>Business clients</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3><i class="fas fa-headset"></i> 10+</h3>
+                                <p>Years experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <i class="fas fa-shield-halved"></i>
+                        <i class="fas fa-network-wired" style="font-size:3rem; margin-left:20px;"></i>
+                        <p style="margin-top:25px; font-weight:600; color:#0b1e2f;">Security. Reliability. Innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section id="contact">
+            <video class="contact-background-video" autoplay muted loop playsinline aria-hidden="true">
+                <source src="CCTV_room.mp4" type="video/mp4">
+            </video>
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-sub">Let’s discuss your CCTV or IT project – we’re here to help.</p>
+
+                <div class="contact-grid">
+                    <!-- Contact information -->
+                    <div class="contact-info">
+                        <h3><i class="fas fa-address-card" style="color:#3bb4e0; margin-right:12px;"></i>Reach us</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+916291660241</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>allexamdata@gmail.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Chowhati Vivekananda Block, Kol-700149</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon–Sat: 8am – 9pm</span>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <a href="#" class="btn btn-outline" style="margin-right:12px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="contact-form">
+                        <h3><i class="fas fa-paper-plane" style="color:#3bb4e0; margin-right:12px;"></i>Send a message</h3>
+                        <form action="https://formsubmit.co/allexamdata@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="New enquiry from Mira CCTV & IT Solution website">
+                            <input type="hidden" name="_captcha" value="false">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject (e.g., CCTV installation)">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Tell us about your requirements..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn"><i class="fas fa-shield"></i> Send message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <p>
+                <i class="fas fa-shield-halved"></i> Mira CCTV & IT Solution 
+                <i class="fas fa-circle" style="font-size:0.4rem; vertical-align:middle;"></i> 
+                &copy; 2025 All rights reserved.
+            </p>
+            <p style="margin-top:12px; font-size:0.9rem;">
+                <i class="fas fa-lock"></i> Trusted security &amp; IT partner
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
