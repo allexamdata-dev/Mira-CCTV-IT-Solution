@@ -3,588 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mira CCTV & IT Solution</title>
-    <!-- Font Awesome 6 (Free) -->
-<!-- Location 1 (in <head>) -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LerJhEuAAAAABPpC_XJ7oBAaGQEXoOwNZSWnhOu"></script>
-
+    <title>Mira CCTV & IT Solution — Customer Inquiry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-        }
-
-        body {
-            background-color: #f5f9ff;
-            color: #1e2b3a;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, system-ui, sans-serif; }
+        body { background-color: #f5f9ff; color: #1e2b3a; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* ---------- HEADER / NAV ---------- */
-        header {
-            background: linear-gradient(135deg, #0b1e2f 0%, #12314a 100%) !important;
-            color: white;
-            padding: 18px 0;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: block;
-            background: rgba(11, 30, 47, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 999px;
-            padding: 8px 18px;
-            backdrop-filter: blur(4px);
-        }
-
-        .header-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            gap: 20px;
-            position: relative;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.7rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .logo img {
-            width: 42px;
-            height: 42px;
-            object-fit: contain;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.12);
-            padding: 4px;
-        }
-
-        .logo i {
-            color: #3bb4e0;
-            font-size: 2rem;
-            filter: drop-shadow(0 0 6px rgba(59, 180, 224, 0.5));
-        }
-
-        .logo span {
-            color: #ffffff;
-        }
-
-        .logo .highlight {
-            color: #3bb4e0;
-            font-weight: 300;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
-
-        nav a {
-            color: #e0edf5;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 8px 2px;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        nav a i {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        nav a:hover {
-            color: white;
-            border-bottom-color: #3bb4e0;
-        }
-
-        .menu-toggle {
-            display: none;
-            border: 0;
-            background: transparent;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 8px;
-        }
+        header { background: linear-gradient(135deg, #0b1e2f 0%, #12314a 100%); color: white; padding: 18px 0;
+                 box-shadow: 0 8px 20px rgba(0,0,0,.2); position: sticky; top: 0; z-index: 100; }
+        nav { display: block; background: rgba(11,30,47,.72); border: 1px solid rgba(255,255,255,.08);
+              border-radius: 999px; padding: 8px 18px; backdrop-filter: blur(4px); }
+        .header-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap;
+                       gap: 20px; position: relative; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 1.7rem; font-weight: 700; letter-spacing: .5px; }
+        .logo span { color: #fff; }
+        .logo .highlight { color: #3bb4e0; font-weight: 300; }
+        nav ul { display: flex; list-style: none; gap: 32px; }
+        nav a { color: #e0edf5; text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 8px 2px;
+                border-bottom: 2px solid transparent; transition: .2s; display: flex; align-items: center; gap: 7px; }
+        nav a:hover { color: #fff; border-bottom-color: #3bb4e0; }
+        .menu-toggle { display: none; border: 0; background: transparent; color: white; font-size: 1.5rem;
+                       cursor: pointer; padding: 8px; }
 
         /* ---------- BUTTONS ---------- */
-        .btn {
-            display: inline-block;
-            background: #3bb4e0;
-            color: #0b1e2f;
-            font-weight: 700;
-            padding: 12px 28px;
-            border-radius: 40px;
-            text-decoration: none;
-            transition: 0.25s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 6px 16px rgba(59, 180, 224, 0.3);
-        }
-
-        .btn:hover {
-            background: #5fc9f0;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 22px rgba(59, 180, 224, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #3bb4e0;
-            color: #3bb4e0;
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: #3bb4e0;
-            color: #0b1e2f;
-        }
+        .btn { display: inline-block; background: #3bb4e0; color: #0b1e2f; font-weight: 700; padding: 12px 28px;
+               border-radius: 40px; text-decoration: none; transition: .25s; border: none; cursor: pointer;
+               font-size: 1rem; box-shadow: 0 6px 16px rgba(59,180,224,.3); }
+        .btn:hover { background: #5fc9f0; transform: translateY(-3px); box-shadow: 0 12px 22px rgba(59,180,224,.4); }
+        .btn:disabled { background: #6c757d; cursor: not-allowed; transform: none; box-shadow: none; }
+        .btn-outline { background: transparent; border: 2px solid #3bb4e0; color: #3bb4e0; box-shadow: none; }
+        .btn-outline:hover { background: #3bb4e0; color: #0b1e2f; }
 
         /* ---------- SECTIONS ---------- */
-        section {
-            padding: 70px 0;
-        }
-
-        .section-title {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #0b1e2f;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 70%;
-            height: 4px;
-            background: #3bb4e0;
-            border-radius: 4px;
-        }
-
-        .section-sub {
-            color: #2c4056;
-            font-size: 1.2rem;
-            margin-bottom: 48px;
-            max-width: 700px;
-        }
+        section { padding: 70px 0; }
+        .section-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 20px; color: #0b1e2f;
+                         position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 70%;
+                                height: 4px; background: #3bb4e0; border-radius: 4px; }
+        .section-sub { color: #2c4056; font-size: 1.2rem; margin-bottom: 48px; max-width: 700px; }
 
         /* ---------- HOME (HERO) ---------- */
-        #home {
-            background:
-                linear-gradient(rgba(6, 22, 35, 0.62), rgba(6, 22, 35, 0.72)),
-                url('home_backgrount.jpg') center center / cover no-repeat;
-            padding: 90px 0 90px;
-            min-height: 78vh;
-        }
-
-        .hero-grid {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .hero-content {
-            flex: 1 1 380px;
-            color: #ffffff;
-        }
-
-        .hero-content h1 {
-            font-size: 3.2rem;
-            line-height: 1.2;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-        }
-
-        .hero-content h1 i {
-            color: #7ad7ff;
-            margin-right: 10px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.92);
-            margin-bottom: 30px;
-            max-width: 550px;
-        }
-
-        .hero-badge {
-            display: flex;
-            gap: 25px;
-            margin-top: 35px;
-            flex-wrap: wrap;
-        }
-
-        .badge-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(4px);
-            color: #ffffff;
-            padding: 12px 22px;
-            border-radius: 60px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-            font-weight: 600;
-        }
-
-        .badge-item i {
-            color: #7ad7ff;
-            font-size: 1.4rem;
-        }
-
-        .hero-image {
-            display: flex;
-            flex: 0 0 220px;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-            margin: 0 auto;
-        }
-
-        .hero-person {
-            width: 100%;
-            text-align: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.35);
-            border: 6px solid rgba(255, 255, 255, 0.8);
-            display: block;
-            margin: 0 auto;
-        }
-
-        .hero-image .director-portrait {
-            transform: rotate(-4deg);
-        }
-
-        .hero-image .engineer-portrait {
-            transform: translateX(-10px) rotate(4deg);
-        }
-
-        .hero-image-label {
-            margin-top: 12px;
-            font-size: 1.05rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-        }
+        #home { background: linear-gradient(rgba(6,22,35,.62), rgba(6,22,35,.72)),
+                 url('home_backgrount.jpg') center center / cover no-repeat;
+                 padding: 90px 0; min-height: 78vh; }
+        .hero-grid { display: flex; align-items: center; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .hero-content { flex: 1 1 380px; color: #fff; }
+        .hero-content h1 { font-size: 3.2rem; line-height: 1.2; font-weight: 800; color: #fff;
+                           margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,.35); }
+        .hero-content p { font-size: 1.2rem; color: rgba(255,255,255,.92); margin-bottom: 30px; max-width: 550px; }
+        .hero-badge { display: flex; gap: 25px; margin-top: 35px; flex-wrap: wrap; }
+        .badge-item { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,.12);
+                      border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(4px); color: #fff;
+                      padding: 12px 22px; border-radius: 60px; box-shadow: 0 8px 20px rgba(0,0,0,.12);
+                      font-weight: 600; }
+        .badge-item i { color: #7ad7ff; font-size: 1.4rem; }
+        .hero-image { display: flex; flex: 0 0 220px; flex-direction: column; align-items: center; gap: 24px; margin: 0 auto; }
+        .hero-image img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%;
+                          box-shadow: 0 20px 30px -15px rgba(0,0,0,.35); border: 6px solid rgba(255,255,255,.8);
+                          display: block; margin: 0 auto; }
+        .director-portrait { transform: rotate(-4deg); }
+        .engineer-portrait { transform: translateX(-10px) rotate(4deg); }
+        .hero-image-label { margin-top: 12px; font-size: 1.05rem; font-weight: 800; letter-spacing: .5px;
+                            color: #fff; text-shadow: 0 3px 10px rgba(0,0,0,.4); }
 
         /* ---------- ABOUT ---------- */
-        #about {
-            background: white;
-        }
-
-        .about-grid {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1 1 380px;
-        }
-
-        .about-text p {
-            margin-bottom: 22px;
-            font-size: 1.1rem;
-            color: #1e2b3a;
-        }
-
-        .about-stats {
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            margin-top: 35px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2.2rem;
-            color: #0b1e2f;
-            font-weight: 800;
-        }
-
-        .stat-item h3 i {
-            color: #3bb4e0;
-            font-size: 1.8rem;
-            margin-right: 6px;
-        }
-
-        .stat-item p {
-            font-size: 1rem;
-            color: #3f5568;
-        }
-
-        .about-image {
-            flex: 1 1 360px;
-            border-radius: 40px;
-            overflow: hidden;
-        }
-
-        .about-image img {
-            display: block;
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            object-position: center 25%;
-        }
+        #about { background: #fff; }
+        .about-grid { display: flex; gap: 50px; flex-wrap: wrap; align-items: center; }
+        .about-text { flex: 1 1 380px; }
+        .about-text p { margin-bottom: 22px; font-size: 1.1rem; }
+        .about-stats { display: flex; justify-content: center; gap: 35px; margin-top: 35px; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-item h3 { font-size: 2.2rem; color: #0b1e2f; font-weight: 800; }
+        .stat-item h3 i { color: #3bb4e0; font-size: 1.8rem; margin-right: 6px; }
+        .stat-item p { font-size: 1rem; color: #3f5568; }
 
         /* ---------- CONTACT ---------- */
-        #contact {
-            position: relative;
-            isolation: isolate;
-            background: #0b1e2f;
+        #contact { position: relative; isolation: isolate; background: #0b1e2f; }
+        #contact::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(5,18,28,.68); }
+        .contact-background-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%;
+                                    object-fit: cover; pointer-events: none; }
+        #contact .container { position: relative; z-index: 0; }
+        #contact .section-title, #contact .section-sub { color: #fff; }
+        .contact-grid { display: flex; gap: 50px; flex-wrap: wrap; }
+        .contact-info { flex: 1 1 300px; }
+        .contact-info h3 { font-size: 1.9rem; margin-bottom: 25px; color: #fff; }
+        .contact-detail { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; background: #fff;
+                          padding: 15px 22px; border-radius: 60px; box-shadow: 0 6px 16px rgba(0,0,0,.03); }
+        .contact-detail i { font-size: 1.6rem; color: #3bb4e0; width: 40px; text-align: center; }
+        .contact-detail span { font-weight: 600; color: #1e2b3a; }
+        .contact-form { flex: 1 1 420px; background: #fff; padding: 40px 35px; border-radius: 40px;
+                        box-shadow: 0 20px 40px rgba(0,0,0,.06); }
+        .contact-form h3 { font-size: 1.9rem; margin-bottom: 25px; color: #0b1e2f; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-weight: 600; font-size: .95rem; margin-bottom: 6px; color: #1e2b3a; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 15px 18px; border: 2px solid #dbe7f2; border-radius: 30px;
+            font-size: 1rem; transition: .2s; background: #f9fcff; font-family: inherit; color: #1e2b3a;
         }
-
-        #contact::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background: rgba(5, 18, 28, 0.68);
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #3bb4e0; outline: none; background: #fff; box-shadow: 0 0 0 4px rgba(59,180,224,.15);
         }
-
-        .contact-background-video {
-            position: absolute;
-            inset: 0;
-            z-index: -2;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        #contact .container {
-            position: relative;
-            z-index: 0;
-        }
-
-        #contact .section-title,
-        #contact .section-sub,
-        .contact-info h3 {
-            color: #ffffff;
-        }
-
-        .contact-grid {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .contact-info {
-            flex: 1 1 300px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.9rem;
-            margin-bottom: 25px;
-            color: #0b1e2f;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 25px;
-            background: white;
-            padding: 15px 22px;
-            border-radius: 60px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
-        }
-
-        .contact-detail i {
-            font-size: 1.6rem;
-            color: #3bb4e0;
-            width: 40px;
-            text-align: center;
-        }
-
-        .contact-detail span {
-            font-weight: 600;
-            color: #1e2b3a;
-        }
-
-        .contact-form {
-            flex: 1 1 400px;
-            background: white;
-            padding: 40px 35px;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-        }
-
-        .contact-form h3 {
-            font-size: 1.9rem;
-            margin-bottom: 25px;
-            color: #0b1e2f;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px 20px;
-            border: 2px solid #dbe7f2;
-            border-radius: 30px;
-            font-size: 1rem;
-            transition: 0.2s;
-            background: #f9fcff;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #3bb4e0;
-            outline: none;
-            background: white;
-            box-shadow: 0 0 0 4px rgba(59, 180, 224, 0.15);
-        }
-
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .contact-form .btn {
-            width: 100%;
-            font-size: 1.1rem;
-            padding: 16px;
-        }
+        .form-group textarea { min-height: 110px; resize: vertical; border-radius: 20px; }
+        .contact-form .btn { width: 100%; font-size: 1.1rem; padding: 16px; }
+        .form-message { margin-top: 16px; padding: 12px 18px; border-radius: 14px; font-weight: 600;
+                        display: none; text-align: center; font-size: .98rem; }
+        .form-message.success { display: block; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .form-message.error   { display: block; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
         /* ---------- FOOTER ---------- */
-        footer {
-            background: #0b1e2f;
-            color: #b6cfdf;
-            text-align: center;
-            padding: 35px 0;
-            font-size: 0.95rem;
-        }
-
-        footer i {
-            color: #3bb4e0;
-            margin: 0 5px;
-        }
+        footer { background: #0b1e2f; color: #b6cfdf; text-align: center; padding: 35px 0; font-size: .95rem; }
+        footer i { color: #3bb4e0; margin: 0 5px; }
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 768px) {
-            .header-flex {
-                flex-direction: row;
-                align-items: center;
-                text-align: left;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: calc(100% + 12px);
-                left: 0;
-                right: 0;
-                border-radius: 16px;
-                padding: 12px 18px;
-                z-index: 101;
-            }
-
-            nav.is-open {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            nav a {
-                padding: 10px 2px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.4rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .contact-form {
-                padding: 30px 20px;
-            }
-
-            section {
-                padding: 50px 0;
-            }
+            .header-flex { flex-direction: row; align-items: center; text-align: left; }
+            .menu-toggle { display: block; }
+            nav { display: none; position: absolute; top: calc(100% + 12px); left: 0; right: 0;
+                  border-radius: 16px; padding: 12px 18px; z-index: 101; }
+            nav.is-open { display: block; }
+            nav ul { flex-direction: column; gap: 8px; }
+            nav a { padding: 10px 2px; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .section-title { font-size: 2rem; }
+            .contact-form { padding: 30px 20px; }
+            section { padding: 50px 0; }
         }
-
         @media (max-width: 480px) {
-            .logo {
-                font-size: 1rem;
-            }
-
-            .hero-image {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 0.95rem;
-            }
-
-            .badge-item {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
+            .logo { font-size: 1rem; }
+            .hero-image { gap: 12px; }
+            nav a { font-size: .95rem; }
+            .badge-item { padding: 8px 16px; font-size: .9rem; }
         }
-
-        /* smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
@@ -593,9 +145,10 @@
     <header>
         <div class="container header-flex">
             <div class="logo">
-                <span>Mira <span class="highlight">Secure & IT Solution</span></span>
+                <span>Mira <span class="highlight">Secure &amp; IT Solution</span></span>
             </div>
-            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="site-navigation">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             <nav id="site-navigation">
@@ -613,30 +166,21 @@
         <section id="home">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <h1>
-                        Secure & Update Your World with Mira
-                    </h1>
-                    <p>
-                        Professional CCTV installation, IT infrastructure, and smart security solutions 
-                        for homes, offices, and enterprises. We keep you protected, connected, and ahead.
-                    </p>
+                    <h1>Secure &amp; Update Your World with Mira</h1>
+                    <p>Professional CCTV installation, IT infrastructure, and smart security solutions
+                       for homes, offices, and enterprises. We keep you protected, connected, and ahead.</p>
                     <div class="hero-badge">
-                        <div class="badge-item">
-                            <i class="fas fa-clock"></i> 24/7 Support
-                        </div>
-                        <div class="badge-item">
-                            <i class="fas fa-certificate"></i> Certified Experts
-                        </div>
+                        <div class="badge-item"><i class="fas fa-clock"></i> 24/7 Support</div>
+                        <div class="badge-item"><i class="fas fa-certificate"></i> Certified Experts</div>
                     </div>
                 </div>
-
                 <div class="hero-image">
-                    <div class="hero-person director-profile">
+                    <div class="hero-person">
                         <img class="director-portrait" src="direcor.jpeg" alt="Director of Mira CCTV & IT Solution">
                         <div class="hero-image-label">Director</div>
                     </div>
-                    <div class="hero-person engineer-profile">
-                        <a href="https://allexamdata-dev.github.io/Technical_king/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Technical Engineer website">
+                    <div class="hero-person">
+                        <a href="https://allexamdata-dev.github.io/Technical_king/" target="_blank" rel="noopener noreferrer">
                             <img class="engineer-portrait" src="technical_engineer.jpeg" alt="Mira technical engineer">
                         </a>
                         <div class="hero-image-label">Technical Engineer</div>
@@ -649,27 +193,21 @@
         <section id="about">
             <div class="container">
                 <h2 class="section-title">About Mira</h2>
-                <p class="section-sub">Your trusted partner in security & IT since 2015.</p>
+                <p class="section-sub">Your trusted partner in security &amp; IT since 2015.</p>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>
-                            <i class="fas fa-check-circle" style="color:#3bb4e0; margin-right:10px;"></i>
-                            <strong>Mira CCTV & IT Solution</strong> delivers cutting-edge surveillance and 
-                            network infrastructure. We combine deep technical expertise with a personal touch 
-                            to protect what matters most.
-                        </p>
-                        <p>
-                            From HD CCTV cameras, biometric access, and alarm systems to structured cabling, 
-                            cloud backup, and IT support – we design solutions that fit your budget and scale 
-                            with your needs. Our certified technicians ensure every installation is clean, 
-                            compliant, and future-ready.
-                        </p>
+                        <p><i class="fas fa-check-circle" style="color:#3bb4e0;margin-right:10px;"></i>
+                           <strong>Mira CCTV &amp; IT Solution</strong> delivers cutting-edge surveillance and
+                           network infrastructure. We combine deep technical expertise with a personal touch
+                           to protect what matters most.</p>
+                        <p>From HD CCTV cameras, biometric access, and alarm systems to structured cabling,
+                           cloud backup, and IT support – we design solutions that fit your budget and scale
+                           with your needs.</p>
                         <div class="about-stats">
                             <div class="stat-item">
                                 <h3><i class="fas fa-camera"></i> 500+</h3>
                                 <p>Cameras installed</p>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -688,47 +226,57 @@
                 <div class="contact-grid">
                     <!-- Contact information -->
                     <div class="contact-info">
-                        <h3><i class="fas fa-address-card" style="color:#3bb4e0; margin-right:12px;"></i>Reach us</h3>
-                        <div class="contact-detail">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+916291660241</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
-                            <span>allexamdata@gmail.com</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-location-dot"></i>
-                            <span>Chowhati Vivekananda Block, Kol-700149</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-clock"></i>
-                            <span>Mon–Sat: 8am – 9pm</span>
-                        </div>
+                        <h3><i class="fas fa-address-card" style="color:#3bb4e0;margin-right:12px;"></i>Reach us</h3>
+                        <div class="contact-detail"><i class="fas fa-phone-alt"></i><span>+91 62916 60241</span></div>
+                        <div class="contact-detail"><i class="fas fa-envelope"></i><span>allexamdata@gmail.com</span></div>
+                        <div class="contact-detail"><i class="fas fa-location-dot"></i>
+                            <span>Chowhati Vivekananda Block, Kol-700149</span></div>
+                        <div class="contact-detail"><i class="fas fa-clock"></i><span>Mon–Sat: 8am – 9pm</span></div>
                         <div style="margin-top: 30px;">
-                            <a href="https://wa.me/916290616721" class="btn btn-outline" style="margin-right:12px;" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="https://wa.me/916290616721" class="btn btn-outline" target="_blank"
+                               rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                         </div>
                     </div>
 
-                    <!-- Contact form -->
+                    <!-- Customer inquiry form -->
                     <div class="contact-form">
-                        <h3><i class="fas fa-paper-plane" style="color:#3bb4e0; margin-right:12px;"></i>Send a message</h3>
-                        <form action="https://script.google.com/macros/s/AKfycbwJN3cs4fv9xM7a_yzKVJ0VsQUvzo-NoZKYIIWBXikTh5ITPHcqDIavnw3CTLDcEUVXQQ/exec" method="POST">
-                            <input type="hidden" name="_subject" value="New enquiry from Mira CCTV & IT Solution website">
-                            <input type="hidden" name="_captcha" value="false">
+                        <h3><i class="fas fa-paper-plane" style="color:#3bb4e0;margin-right:12px;"></i>Customer Inquiry</h3>
+                        <form id="customerForm" novalidate>
                             <div class="form-group">
-                                <input type="text" name="name" placeholder="Your full name" required>
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Your full name"
+                                       autocomplete="name" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Email address" required>
+                                <label for="contractNumber">Contract Number *</label>
+                                <input type="text" id="contractNumber" name="contractNumber"
+                                       placeholder="e.g., MIRA-2025-001" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="subject" placeholder="Subject (e.g., CCTV installation)">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com"
+                                       autocomplete="email" required>
                             </div>
                             <div class="form-group">
-                                <textarea name="message" placeholder="Tell us about your requirements..." required></textarea>
+                                <label for="product">Product/Service *</label>
+                                <select id="product" name="product" required>
+                                    <option value="">-- Select a product/service --</option>
+                                    <option value="CCTV">CCTV</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Networking">Networking / IT Support</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
-                            <button type="submit" class="btn"><i class="fas fa-shield"></i> Send message</button>
+                            <div class="form-group">
+                                <label for="requirement">Requirement *</label>
+                                <textarea id="requirement" name="requirement"
+                                          placeholder="Tell us about your requirements..." required></textarea>
+                            </div>
+                            <button type="submit" id="submitBtn" class="btn">
+                                <i class="fas fa-shield"></i> Submit Inquiry
+                            </button>
+                            <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
                         </form>
                     </div>
                 </div>
@@ -739,37 +287,125 @@
     <!-- ========== FOOTER ========== -->
     <footer>
         <div class="container">
-            <p>
-                <i class="fas fa-shield-halved"></i> Mira CCTV & IT Solution 
-                <i class="fas fa-circle" style="font-size:0.4rem; vertical-align:middle;"></i> 
-                &copy; 2025 All rights reserved.
-            </p>
-            <p style="margin-top:12px; font-size:0.9rem;">
-                <i class="fas fa-lock"></i> Trusted security &amp; IT partner
-            </p>
+            <p><i class="fas fa-shield-halved"></i> Mira CCTV &amp; IT Solution
+               <i class="fas fa-circle" style="font-size:.4rem;vertical-align:middle;"></i>
+               &copy; 2025 All rights reserved.</p>
+            <p style="margin-top:12px;font-size:.9rem;"><i class="fas fa-lock"></i> Trusted security &amp; IT partner</p>
         </div>
     </footer>
 
     <script>
-	// Location 2 (in <script> at bottom)
-	const RECAPTCHA_SITE_KEY = "6LerJhEuAAAAABPpC_XJ7oBAaGQEXoOwNZSWnhOu";
+        /* =====================================================
+           REPLACE THE URL BELOW WITH YOUR DEPLOYED WEB APP URL
+           ===================================================== */
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcqxoZSsZo1NmDCtp8HOqUKo_vh3gGtU48ui6zTW0J0-l2vUzOf0cDKGiekr1jvyUu/exec";
+
+        /* ---------- Mobile nav toggle ---------- */
         const menuToggle = document.querySelector('.menu-toggle');
         const siteNavigation = document.querySelector('#site-navigation');
-
         menuToggle.addEventListener('click', () => {
             const isOpen = siteNavigation.classList.toggle('is-open');
             menuToggle.setAttribute('aria-expanded', String(isOpen));
             menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
             menuToggle.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
         });
-
-        siteNavigation.querySelectorAll('a').forEach((link) => {
+        siteNavigation.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 siteNavigation.classList.remove('is-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 menuToggle.setAttribute('aria-label', 'Open navigation menu');
                 menuToggle.querySelector('i').className = 'fas fa-bars';
             });
+        });
+
+        /* ---------- Inquiry form ---------- */
+        const form       = document.getElementById('customerForm');
+        const submitBtn  = document.getElementById('submitBtn');
+        const msgBox     = document.getElementById('formMessage');
+
+        function showMessage(text, type) {
+            msgBox.textContent = text;
+            msgBox.className = 'form-message ' + type;
+            msgBox.style.display = 'block';
+        }
+
+        function clearMessage() {
+            msgBox.textContent = '';
+            msgBox.className = 'form-message';
+            msgBox.style.display = 'none';
+        }
+
+        // Client-side validation mirror of the server rules
+        function validateForm(data) {
+            const errors = [];
+            if (!data.fullName.trim())        errors.push('Full Name is required.');
+            if (!data.contractNumber.trim())  errors.push('Contract Number is required.');
+            if (!data.email.trim())           errors.push('Email Address is required.');
+            if (!data.product)                errors.push('Please select a Product/Service.');
+            if (!data.requirement.trim())     errors.push('Requirement is required.');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (data.email && !emailRegex.test(data.email.trim()))
+                errors.push('Please enter a valid email address.');
+            return errors;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            clearMessage();
+
+            // Collect data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // 1. Client-side validation
+            const errors = validateForm(data);
+            if (errors.length) {
+                showMessage(errors[0], 'error');
+                return;
+            }
+
+            // 2. Disable button during submit
+            submitBtn.disabled = true;
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+            try {
+                // 3. Send to Apps Script
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    // text/plain avoids CORS preflight; Apps Script parses JSON body anyway
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        fullName:       data.fullName.trim(),
+                        contractNumber: data.contractNumber.trim(),
+                        email:          data.email.trim(),
+                        product:        data.product,
+                        requirement:    data.requirement.trim()
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.result === 'success') {
+                    showMessage(
+                        '✅ Thank you! Your information has been submitted successfully. ' +
+                        'We’ve sent a confirmation email and our team will contact you soon.',
+                        'success'
+                    );
+                    form.reset();
+                } else {
+                    showMessage('❌ ' + (result.message || 'Submission failed. Please try again.'), 'error');
+                }
+            } catch (err) {
+                console.error('Submission error:', err);
+                showMessage(
+                    '❌ Network error. Please check your internet connection and try again.',
+                    'error'
+                );
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
+            }
         });
     </script>
 </body>
