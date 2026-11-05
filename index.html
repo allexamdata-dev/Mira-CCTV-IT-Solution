@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mira CCTV & IT Solution</title>
     <!-- Font Awesome 6 (Free) -->
+<!-- Location 1 (in <head>) -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LerJhEuAAAAABPpC_XJ7oBAaGQEXoOwNZSWnhOu"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -282,12 +285,12 @@
             object-fit: cover;
             border-radius: 50%;
             box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.35);
-            border: 3px solid rgba(255, 255, 255, 0.8);
+            border: 6px solid rgba(255, 255, 255, 0.8);
             display: block;
             margin: 0 auto;
         }
 
-        .hero-person:first-child img {
+        .hero-image .director-portrait {
             transform: rotate(-4deg);
         }
 
@@ -628,13 +631,13 @@
                 </div>
 
                 <div class="hero-image">
-                    <div class="hero-person">
-                        <img src="director_image.jpeg" alt="Director of Mira CCTV & IT Solution">
+                    <div class="hero-person director-profile">
+                        <img class="director-portrait" src="direcor.jpeg" alt="Director of Mira CCTV & IT Solution">
                         <div class="hero-image-label">Director</div>
                     </div>
-                    <div class="hero-person">
+                    <div class="hero-person engineer-profile">
                         <a href="https://allexamdata-dev.github.io/Technical_king/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Technical Engineer website">
-                            <img class="engineer-portrait" src="Technical_engineer.jpeg" alt="Mira technical engineer">
+                            <img class="engineer-portrait" src="technical_engineer.jpeg" alt="Mira technical engineer">
                         </a>
                         <div class="hero-image-label">Technical Engineer</div>
                     </div>
@@ -710,7 +713,7 @@
                     <!-- Contact form -->
                     <div class="contact-form">
                         <h3><i class="fas fa-paper-plane" style="color:#3bb4e0; margin-right:12px;"></i>Send a message</h3>
-                        <form action="https://formsubmit.co/manasdebnathubi@gmail.com" method="POST">
+                        <form action="https://script.google.com/macros/s/AKfycbwJN3cs4fv9xM7a_yzKVJ0VsQUvzo-NoZKYIIWBXikTh5ITPHcqDIavnw3CTLDcEUVXQQ/exec" method="POST">
                             <input type="hidden" name="_subject" value="New enquiry from Mira CCTV & IT Solution website">
                             <input type="hidden" name="_captcha" value="false">
                             <div class="form-group">
@@ -748,6 +751,8 @@
     </footer>
 
     <script>
+	// Location 2 (in <script> at bottom)
+	const RECAPTCHA_SITE_KEY = "6LerJhEuAAAAABPpC_XJ7oBAaGQEXoOwNZSWnhOu";
         const menuToggle = document.querySelector('.menu-toggle');
         const siteNavigation = document.querySelector('#site-navigation');
 
